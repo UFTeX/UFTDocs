@@ -281,7 +281,7 @@ CURSO DE  {\bf\MakeUppercase \local@department} \vspace{-.4\baselineskip}\\
 \descricao{}
 \maketitle
 
-\begin{linenumbers}
+\begin{linenumbers}[1]
 \noindent Ao \local@dayname\ dia do mês de \global@monthname\ de \number\year\, realizou-se a defesa de Projeto de Graduação, da disciplina de \local@class\ do(a) discente {\bf \@authname\ \@authsurn }, do curso de \local@department\, do Campus Universiário de \local@city\, da Universidade Federal do Tocantins (UFT), intitulado ``\MakeUppercase{\local@titlePG}'', realizado sob a responsabilidade do  
  \count1=0
     %\toks@={}
@@ -322,7 +322,7 @@ os quais após avaliação, consideraram o(a) discente APROVADO. Nada mais tendo
 \descricao{}
 \maketitle
 
-\begin{linenumbers}
+\begin{linenumbers}[1]
 \noindent Ao \local@dayname\ dia do mês de \global@monthname\ de \number\year\, realizou-se a defesa de Projeto de Graduação, da disciplina de \local@class\ do(a) discente {\bf \@authname\ \@authsurn }, do curso de \local@department\, do Campus Universiário de \local@city\, da Universidade Federal do Tocantins (UFT), intitulado ``\MakeUppercase{\local@titlePG}'', realizado sob a responsabilidade do  
  \count1=0
     %\toks@={}

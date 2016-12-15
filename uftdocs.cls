@@ -281,7 +281,7 @@ CURSO DE  {\bf\MakeUppercase \local@department} \vspace{-.4\baselineskip}\\
 \descricao{}
 \maketitle
 
-\begin{linenumbers}
+\begin{linenumbers}[1]
 \noindent Ao \local@dayname\ dia do mês de \global@monthname\ de \number\year\, realizou-se a defesa de Projeto de Graduação, da disciplina de \local@class\ do(a) discente {\bf \@authname\ \@authsurn }, do curso de \local@department\, do Campus Universiário de \local@city\, da Universidade Federal do Tocantins (UFT), intitulado ``\MakeUppercase{\local@titlePG}'', realizado sob a responsabilidade do  
  \count1=0
     %\toks@={}
@@ -303,7 +303,7 @@ CURSO DE  {\bf\MakeUppercase \local@department} \vspace{-.4\baselineskip}\\
         \@whilenum \count1<\@examiner \do {
             \protect\csname uftExaminer:\the\count1 \endcsname ,
             \advance\count1 by 1}
-os quais após avaliação, consideraram o(a) discente \MakeUppercase{\local@status}. Nada mais tendo a constar, assinaram esta Ata os presentes:
+os quais após avaliação, consideraram o(a) discente APROVADO. Nada mais tendo a constar, assinaram esta Ata os presentes:
 
      \begin{center}
         \count1=0
@@ -322,7 +322,7 @@ os quais após avaliação, consideraram o(a) discente \MakeUppercase{\local@sta
 \descricao{}
 \maketitle
 
-\begin{linenumbers}
+\begin{linenumbers}[1]
 \noindent Ao \local@dayname\ dia do mês de \global@monthname\ de \number\year\, realizou-se a defesa de Projeto de Graduação, da disciplina de \local@class\ do(a) discente {\bf \@authname\ \@authsurn }, do curso de \local@department\, do Campus Universiário de \local@city\, da Universidade Federal do Tocantins (UFT), intitulado ``\MakeUppercase{\local@titlePG}'', realizado sob a responsabilidade do  
  \count1=0
     %\toks@={}
@@ -346,7 +346,7 @@ os quais após avaliação, consideraram o(a) discente \MakeUppercase{\local@sta
   %          \advance\count1 by 1}
 %os quais após avaliação, atribuíram a média final \local@notanumero (\local@notaextenso ), consideraram o(a) discente \MakeUppercase{\local@status}. Nada mais tendo a constar, assinaram esta Ata os presentes:
 
-\noindent Atribuíram a Nota Final \local@notanumero\ (\local@notaextenso ), pelo trabalho, tendo sido considerado \MakeUppercase{\local@status}. Nada mais tendo a constar, assinam esta Ata os seguintes componentes da banca examinadora:
+\noindent Atribuíram a Nota Final \_\_\_\_\_\_\_\_ (\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_), pelo trabalho, tendo sido considerado \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. Nada mais tendo a constar, assinam esta Ata os seguintes componentes da banca examinadora:
 
      \begin{center}
         \count1=0
