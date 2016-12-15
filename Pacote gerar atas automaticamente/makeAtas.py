@@ -10,6 +10,7 @@
 import sys
 import csv
 import os
+import codecs
 from datetime import date
 def getFirstName(name):
     return name.split()[0]
@@ -39,9 +40,10 @@ if __name__=="__main__":
     if len(sys.argv)<2:
         print("Uso: python3 {0} path to file.csv".format(sys.argv[0]))
         sys.exit()
-    print("teste")
-    with open(sys.argv[1], newline='') as csvfile:
+    #print("teste")
+    with open(sys.argv[1],encoding='utf-8', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter = ',', quotechar='\"')
+		#print(reader)
         firstLine = True
         for currentLine in reader:
             if firstLine:
@@ -65,7 +67,7 @@ if __name__=="__main__":
 
             output += "\\makeDeclaracaoPG\n"
             # save output to file tccentry.tex
-            with open('tccentry.tex', 'w') as out:
+            with open('tccentry.tex', 'w', encoding='utf-8') as out:
                 out.write(output + '\n')
             day, month, year = processDate(currentLine['Data'])
             outputData = "\\date{{{0}}}{{{1}}}{{{2}}}\n".format(day, month, year)
@@ -73,7 +75,7 @@ if __name__=="__main__":
             with open('data.tex', 'w') as out:
                 out.write(outputData + '\n')
 
-            os.system('pdflatex ata_pg2.tex >pdflatex.out')
+            os.system('pdflatex ata_pg2.tex > pdflatex.out')
             os.rename('ata_pg2.pdf', 'output/{0}.pdf'.format(currentLine['Aluno']))
             #mv the pdf file to output
             #sys.exit()
