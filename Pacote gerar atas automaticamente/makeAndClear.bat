@@ -2,7 +2,7 @@ chdir output
 del *.pdf
 chdir ..
 
-python makeAtas.py uftccomptcc.csv
+C:\Python27\python.exe makeAtas.py bancas.csv
 
 del *.aux
 del *.log
