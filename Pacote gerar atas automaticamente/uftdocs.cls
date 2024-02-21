@@ -140,7 +140,7 @@
 
 \newcommand\local@dayname{\ifcase\number\day\or
   \um\or \dois\or \tres\or \quatro\or \cinco\or \seis\or \sete\or \oito\or \nove\or \dez\or
-  \onze\or \doze\or \treze\or \quatorze\or \quinze\or \dezesseis\or \dezessete\or \dezoito\or \dezenove\or \vinte \or \vinteum \or \vintedois\or \vintetres\or \vintequatro\or \vintecinco\or \vinteseis\or \vintesete\or \vinteoito \or \vintenove \or \trinte\or \trintaum \fi}
+  \onze\or \doze\or \treze\or \quatorze\or \quinze\or \dezesseis\or \dezessete\or \dezoito\or \dezenove\or \vinte \or \vinteum \or \vintedois\or \vintetres\or \vintequatro\or \vintecinco\or \vinteseis\or \vintesete\or \vinteoito \or \vintenove \or \trinta\or \trintaum \fi}
 
 \newcommand{\descricao}[1]{
   \global\def\local@descricao{#1}

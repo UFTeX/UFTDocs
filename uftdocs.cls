@@ -1,5 +1,5 @@
 \def\filename{uftex2.dtx}
-\def\fileversion{v1.5.1}
+\def\fileversion{v1.6.1}
 \def\filedate{2016/11/11}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass {uftdocs} [\filedate\ \fileversion\ Classe personalizada para documentos da UFT]
@@ -178,28 +178,27 @@ CURSO DE  {\bf\MakeUppercase \local@department} \vspace{-.4\baselineskip}\\
 	%\vspace{\baselineskip}
 }
 
+\newcommand{\colorsection}[2]{%
+  \colorbox{cor}{\parbox{\dimexpr\textwidth-2\fboxsep}{\color{cortexto}\filcenter\MakeUppercase{ #1~.~#2}}}}
 \renewcommand{\thechapter}{\Roman{chapter}}
-\titleformat{\chapter}[display]
+\titleformat{\chapter}
   {\bf}
   {}
   {-5pt}
-  {\colorsection}
-\titlespacing*{\chapter}{0pt}{0pt}{\baselineskip}
+  {\colorsection\thechapter}
+\titlespacing*{\chapter}{0pt}{15pt}{\baselineskip}
 
-\renewcommand{\thesection}{\Roman{chapter}}
+
+\newcommand{\colorsectionss}[2]{%
+  \colorbox{cor}{\parbox{\dimexpr\textwidth-2\fboxsep}{\color{cortexto} #1~.~#2}}}
+\renewcommand{\thesection}{\arabic{section}}
 \titleformat{\section}[display]
   {\bf}
   {}
   {-5pt}
-  {\colorsectionss}
+  {\colorsectionss\thesection}
 \titlespacing*{\section}{0pt}{0pt}{\baselineskip}
 
-\newcommand{\colorsectionss}[1]{%
-  \colorbox{cor}{\parbox{\dimexpr\textwidth-2\fboxsep}{\color{cortexto} #1}}}
-
-%\titleclass{\chapter}{straight}
-\newcommand{\colorsection}[1]{%
-  \colorbox{cor}{\parbox{\dimexpr\textwidth-2\fboxsep}{\color{cortexto}\filcenter\MakeUppercase{ #1}}}}
 
 \renewpagestyle{plain}{%
   \setfoot{}{}{\thepage}%
@@ -281,7 +280,7 @@ CURSO DE  {\bf\MakeUppercase \local@department} \vspace{-.4\baselineskip}\\
 \descricao{}
 \maketitle
 
-\begin{linenumbers}[1]
+\begin{linenumbers}
 \noindent Ao \local@dayname\ dia do mês de \global@monthname\ de \number\year\, realizou-se a defesa de Projeto de Graduação, da disciplina de \local@class\ do(a) discente {\bf \@authname\ \@authsurn }, do curso de \local@department\, do Campus Universiário de \local@city\, da Universidade Federal do Tocantins (UFT), intitulado ``\MakeUppercase{\local@titlePG}'', realizado sob a responsabilidade do  
  \count1=0
     %\toks@={}
@@ -303,7 +302,7 @@ CURSO DE  {\bf\MakeUppercase \local@department} \vspace{-.4\baselineskip}\\
         \@whilenum \count1<\@examiner \do {
             \protect\csname uftExaminer:\the\count1 \endcsname ,
             \advance\count1 by 1}
-os quais após avaliação, consideraram o(a) discente APROVADO. Nada mais tendo a constar, assinaram esta Ata os presentes:
+os quais após avaliação, consideraram o(a) discente \MakeUppercase{\local@status}. Nada mais tendo a constar, assinaram esta Ata os presentes:
 
      \begin{center}
         \count1=0
@@ -322,7 +321,7 @@ os quais após avaliação, consideraram o(a) discente APROVADO. Nada mais tendo
 \descricao{}
 \maketitle
 
-\begin{linenumbers}[1]
+\begin{linenumbers}
 \noindent Ao \local@dayname\ dia do mês de \global@monthname\ de \number\year\, realizou-se a defesa de Projeto de Graduação, da disciplina de \local@class\ do(a) discente {\bf \@authname\ \@authsurn }, do curso de \local@department\, do Campus Universiário de \local@city\, da Universidade Federal do Tocantins (UFT), intitulado ``\MakeUppercase{\local@titlePG}'', realizado sob a responsabilidade do  
  \count1=0
     %\toks@={}
@@ -346,7 +345,7 @@ os quais após avaliação, consideraram o(a) discente APROVADO. Nada mais tendo
   %          \advance\count1 by 1}
 %os quais após avaliação, atribuíram a média final \local@notanumero (\local@notaextenso ), consideraram o(a) discente \MakeUppercase{\local@status}. Nada mais tendo a constar, assinaram esta Ata os presentes:
 
-\noindent Atribuíram a Nota Final \_\_\_\_\_\_\_\_ (\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_), pelo trabalho, tendo sido considerado \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. Nada mais tendo a constar, assinam esta Ata os seguintes componentes da banca examinadora:
+\noindent Atribuíram a Nota Final \local@notanumero\ (\local@notaextenso ), pelo trabalho, tendo sido considerado \MakeUppercase{\local@status}. Nada mais tendo a constar, assinam esta Ata os seguintes componentes da banca examinadora:
 
      \begin{center}
         \count1=0
@@ -426,7 +425,7 @@ Recomendações exigidas do trabalho intitulado ``\MakeUppercase{\local@titlePG}
 
 \newcommand\makeDeclaracaoPG{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Declaração de participação de banca examinadora de \local@class\ }
+\title{Declaração de pariticipação de banca examinadora de \local@class\ }
 \descricao{}
 
 \toks@={}
@@ -437,7 +436,7 @@ Recomendações exigidas do trabalho intitulado ``\MakeUppercase{\local@titlePG}
 %\begin{linenumbers}
 Declaro para os devidos fins de direito, que o(a) 
 \protect\csname uftExaminer:\the\count2 \endcsname\ 
- foi avaliador(a) na banca examinadora  da disciplina de \local@class\ do(a) discente {\bf \@authname\ \@authsurn }, do curso de \local@department\, do Campus Universiário de \local@city\, semestre letivo \@termyear\ / \@termnumber,  da Universidade Federal do Tocantins (UFT), intitulado ``\MakeUppercase{\local@titlePG}'', realizado sob a responsabilidade do  
+ foi avaliador(a) na banca examinadora  da disciplina de \local@class\ do(a) discente {\bf \@authname\ \@authsurn }, do curso de \local@department\, do Campus Universiário de \local@city\, da Universidade Federal do Tocantins (UFT), intitulado ``\MakeUppercase{\local@titlePG}'', realizado sob a responsabilidade do  
  \count1=0
     %\toks@={}
     \@whilenum \count1<\@advisor \do{%
@@ -553,7 +552,7 @@ do Projeto de Graduação,  intitulado ``\MakeUppercase{\local@titlePG}'', do(a)
 
 
 %% Do pacote easylist: listas segundo a norma: incisos, alíneas, itens.
-\ListProperties(Numbers1=R,Numbers2=l,Numbers3=a,FinalMark1={~--},FinalMark2={)},Hide2=1,Hide3=2,Margin1=4em,Margin2=6em,Margin3=7.5em,Align=move) %Space*=10pt entre mesmo nível,Space=9pt,Space*=9pt
+\ListProperties(Numbers1=R,Numbers2=l,Numbers3=a,FinalMark1={~--},FinalMark2={)},Hide2=1,Hide3=2,Margin1=2.5cm,Margin2=3cm,Margin3=3.5cm,Align=move) %Space*=10pt entre mesmo nível,Space=9pt,Space*=9pt
 %Adiciona: Margin=\the\parindent,Progressive=3ex, 27-04-2015Progressive=3em,Margin1=5em,Align=move
 
 %%%from the etoolbox package: restart numbering easylist
@@ -572,7 +571,7 @@ do Projeto de Graduação,  intitulado ``\MakeUppercase{\local@titlePG}'', do(a)
 	\ifnum\theartigo<10 %
 	{\bfseries Art.~\arabic{artigo}º.~}%
 	\else
-	{\bfseries Art. \arabic{artigo}º.~}%
+	{\bfseries Art. \arabic{artigo}.~}%
 	\fi
 	%Art. \arabic{artigo}.~
 	}
@@ -582,13 +581,13 @@ do Projeto de Graduação,  intitulado ``\MakeUppercase{\local@titlePG}'', do(a)
 	\ifnum\theparagrafo<10 %
 	\S~\arabic{paragrafo}º.~%
 	\else
-	\S~\arabic{paragrafo}º.~%
+	\S~\arabic{paragrafo}.~%
 	\fi
 }
 
 \newenvironment{paragrafos}{\setcounter{paragrafo}{0}
 	\setlength{\parindent}{0pt}
-	\leftskip=4em
+	\leftskip=2.5cm
 	%\begin{addmargin}[4em]{0pt} 
 	}
 	{%\end{addmargin}

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # Script para automatização da geração de atas de projeto de graduação I e II
 # do curso de ciência da computação
 # Usamos o modelo latex proposto pelo professor Tiago Almeida (classe chamada uftdocs)
@@ -41,7 +43,7 @@ if __name__=="__main__":
         print("Uso: python3 {0} path to file.csv".format(sys.argv[0]))
         sys.exit()
     #print("teste")
-    with open(sys.argv[1],encoding='utf-8', newline='') as csvfile:
+    with open(sys.argv[1]) as csvfile:
         reader = csv.reader(csvfile, delimiter = ',', quotechar='\"')
 		#print(reader)
         firstLine = True
@@ -67,7 +69,7 @@ if __name__=="__main__":
 
             output += "\\makeDeclaracaoPG\n"
             # save output to file tccentry.tex
-            with open('tccentry.tex', 'w', encoding='utf-8') as out:
+            with open('tccentry.tex', 'w') as out:
                 out.write(output + '\n')
             day, month, year = processDate(currentLine['Data'])
             outputData = "\\date{{{0}}}{{{1}}}{{{2}}}\n".format(day, month, year)
@@ -75,6 +77,8 @@ if __name__=="__main__":
             with open('data.tex', 'w') as out:
                 out.write(outputData + '\n')
 
+            os.system('pdflatex ata_pg2.tex > pdflatex.out')
+            os.system('cls')
             os.system('pdflatex ata_pg2.tex > pdflatex.out')
             os.rename('ata_pg2.pdf', 'output/{0}.pdf'.format(currentLine['Aluno']))
             #mv the pdf file to output
