@@ -44,29 +44,9 @@ branco:  RGB {255, 255, 255}
 
 ---
 
-## ✳️ Comandos Personalizados
-
-### `\mybox{conteúdo}`
-
-Cria uma caixa estilizada com o conteúdo fornecido.
-
----
-
 ### `\descricao{texto}`
 
 Apresenta um item de descrição com estilo definido.
-
----
-
-### `\colorsection{cor}{título}`
-
-Define uma **seção com fundo colorido**, usada em relatórios institucionais ou monografias.
-
----
-
-### `\colorsectionss{cor}{título}`
-
-Variante para subsubseções com fundo colorido.
 
 ---
 
@@ -77,20 +57,6 @@ Aplica estilo "cortado" (sublinhado com risco) ao texto — exige `ulem`.
 ---
 
 ### `\artigo`  
-### `\paragrafo`
-
-Marcadores que configuram o estilo do capítulo/ seção para **artigos científicos** ou **monografias em parágrafo corrido**. São usados para formatar os títulos.
-
----
-
-## 🔄 Comandos Redefinidos
-
-- `\renewcommand{\familydefault}{\sfdefault}` — Fonte sans-serif como padrão.
-- `\renewcommand{\thechapter}` e `\thesection` — Estilo de numeração alterado.
-- `\renewcommand{\baselinestretch}` — Espaçamento entre linhas ajustado.
-- `\chapterheadstartvskip` e `\chapterheadendvskip` — Ajustes verticais nos títulos.
-
----
 
 ## 🧱 Ambientes Definidos
 
@@ -102,30 +68,3 @@ Define um bloco com espaçamento e indentação especial para textos corridos.
 Texto corrido com formatação especial.
 \end{paragrafos}
 ```
-
----
-
-## 🧾 Exemplo de Documento
-
-```latex
-\documentclass[12pt]{uftdocs}
-
-\begin{document}
-
-\chapter{Introdução}
-
-\colorsection{azul}{Objetivo}
-\begin{paragrafos}
-Este documento apresenta os objetivos do trabalho com estilo padronizado da UFT.
-\end{paragrafos}
-
-\end{document}
-```
-
----
-
-## 🏷️ Observações
-
-- Ideal para **TCCs, monografias e relatórios institucionais**.
-- Integra visual institucional da UFT.
-- Para marca d’água, use o pacote `wallpaper` com figuras da UFT.
